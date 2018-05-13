@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  height: 50% !important;
+  overflow: hidden;
+  background-color: white;
+}
+
+.shop-title {
+  color: darkcyan;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.home-overlay {
+  padding: 0 !important;
+  height: 90vh !important;
+}
+
+.search-row {
+  background-image: url('assets/images/home/bar.jpg');
+  height: 73%;
+}
+
+.search-form {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  padding-top: 10px;
+}
+
+.nav-myshop {
+  margin-bottom: 0 !important;
+}
+
+.search-input {
+  width: 400px;
+  margin: auto;
+}
+
+.sign-in-row {
+  height: 28.3%;
+  background-color: darkcyan;
+  padding: 0;
+  margin: 0;
+}
+
+.sign-in-btn {
+}
+
+.v-center-table {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.v-center-table div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+a {
+  color:  #ec407a;
+  font-weight: bold;
+  font-size: 14px;
+}
+
