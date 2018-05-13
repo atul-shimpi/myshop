@@ -2,7 +2,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  height: 50% !important;
   overflow: hidden;
   background-color: white;
 }
@@ -15,12 +14,13 @@ body {
 
 .home-overlay {
   padding: 0 !important;
-  height: 90vh !important;
+  height: 92vh !important;
 }
 
 .search-row {
   background-image: url('assets/images/home/bar.jpg');
-  height: 73%;
+  height: 78%;
+  background-size: 100% 100%;
 }
 
 .search-form {
@@ -39,7 +39,7 @@ body {
 }
 
 .sign-in-row {
-  height: 28.3%;
+  height: 22%;
   background-color: darkcyan;
   padding: 0;
   margin: 0;
