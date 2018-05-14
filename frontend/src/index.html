@@ -13,40 +13,89 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-    <ul class="navbar-nav ml-auto">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-effect waves-light" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link waves-effect waves-light" href="#">My Companies <span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="javascript:;;">
-          <i class="fa fa-user"></i> Sign In</a>
+        <a class="nav-link waves-effect waves-light" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" href="#">Suppliers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" href="#">Purchases</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" href="#">Buyers</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle waves-effect waves-light"
+          id="navbarDropdownMenuLink-3"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          Sales
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-danger" aria-labelledby="navbarDropdownMenuLink-3">
+          <a class="dropdown-item waves-effect waves-light" href="#">Delivery Challans</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">Sales Invoices</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light"><i class="fa fa-user"></i> Sign Out</a>
       </li>
     </ul>
   </div>
 </nav>
   <div class="container-fluid home-overlay">
+    <!-- Search -->
     <div class="row search-row">
       <div class="col">
-          <div class="text-white text-center d-flex  search-form">
-            <div style="width: 100%">
-              <h3><strong>Search</strong></h3>
-              <p>Search products, invoices, suppliers, buyers...</p>
-              <input autofocus type="text" class="form-control search-input">
-            </div>
+        <div class="text-white text-center d-flex  search-form">
+          <div style="width: 100%">
+            <h3><strong>Search</strong></h3>
+            <p>Search products, invoices, suppliers, buyers...</p>
+            <input autofocus type="text" class="form-control search-input">
           </div>
+        </div>
       </div>
     </div>
 
-
-    <div class="row sign-in-row  v-center-table">
+    <!-- quick links -->
+    <div class="row quick-links-row  v-center-table">
+      <!-- Add Purchase -->
       <div class="col" align="center">
-        <a class="btn btn-pink waves-effect waves-light sign-in-btn">
-          <i class="fa fa-user left"></i>
-          Sign In
+        <a class="btn btn-sm btn-default waves-effect waves-light">
+          <i class="fa fa-plus left"></i>
+          Add Purchase Invoice
+        </a>
+
+        <!-- Add Del. Challan -->
+        <a class="btn btn-sm btn-default waves-effect waves-light">
+          <i class="fa fa-plus left"></i>
+          Add Delivery Challan
+        </a>
+
+        <!-- Add Sales Invoice -->
+        <a class="btn btn-sm btn-default waves-effect waves-light">
+          <i class="fa fa-plus left"></i>
+          Add Sales Invoice
         </a>
       </div>
     </div>
-  </div>
 
-  <app-root></app-root>
+
+  </div>
+<app-root></app-root>
 
 </body>
 </html>
+

@@ -7,9 +7,11 @@ body {
 }
 
 .shop-title {
-  color: darkcyan;
+  color: lightskyblue;
   font-size: 22px;
   font-weight: bold;
+  padding-right: 10px;
+  border-right: 1px solid lightgray;
 }
 
 .home-overlay {
@@ -17,14 +19,26 @@ body {
   height: 92vh !important;
 }
 
+
+.quick-links-row {
+  height: 18%;
+  background-color: teal;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-links-row .btn {
+  width: 200px !important;
+}
+
 .search-row {
   background-image: url('assets/images/home/bar.jpg');
-  height: 78%;
+  height: 82%;
   background-size: 100% 100%;
 }
 
 .search-form {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
   padding-top: 10px;
 }
@@ -38,15 +52,7 @@ body {
   margin: auto;
 }
 
-.sign-in-row {
-  height: 22%;
-  background-color: teal;
-  padding: 0;
-  margin: 0;
-}
 
-.sign-in-btn {
-}
 
 .v-center-table {
   display: table;
@@ -58,8 +64,8 @@ body {
   vertical-align: middle;
 }
 
-a {
-  color:  #ec407a;
+a, .dropdown-toggle {
+  color:  darkcyan !important;
   font-weight: bold;
   font-size: 14px;
 }
