@@ -3,20 +3,34 @@
 
 body {
   overflow: hidden;
-  background-color: white;
+  background-color: whitesmoke;
 }
 
+.global-nav-containter {
+  margin: 0;
+  margin-bottom: 8px;
+
+}
+
+.nav-myshop {
+  background-color: white;
+  padding: 0 !important;
+}
 .shop-title {
-  color: lightskyblue;
+  color: darksalmon;
   font-size: 22px;
   font-weight: bold;
-  padding-right: 10px;
-  border-right: 1px solid lightgray;
+  padding-left: 10px;
+  border-rightx: 1px solid lightgray;
 }
 
+.xxx {
+  box-shadow: none;
+}
 .home-overlay {
   padding: 0 !important;
   height: 92vh !important;
+  margin: 0 !important;
 }
 
 
@@ -32,27 +46,36 @@ body {
 }
 
 .search-row {
-  background-image: url('assets/images/home/bar.jpg');
+  margin: 0;
+  width: 100%;
   height: 82%;
-  background-size: 100% 100%;
+ 
+}
+
+.search-overlay {
+	 background-color: rgba(0, 0, 0, 0.6);
+	
 }
 
 .search-form {
-  background-color: rgba(0, 0, 0, 0.7);
+  
   height: 100%;
-  padding-top: 10px;
+  padding-top: 0;
+   background-image: url('assets/images/home/snow.jpg') !important;
+	
+	 background-size: 100% 100%;
 }
 
-.nav-myshop {
+.navbar {
   margin-bottom: 0 !important;
+  padding: 0;
+  border-bottom: none !important;
 }
 
 .search-input {
   width: 400px;
   margin: auto;
 }
-
-
 
 .v-center-table {
   display: table;
@@ -64,9 +87,52 @@ body {
   vertical-align: middle;
 }
 
+
+.doormat-menu-bar {
+  width: 100%;
+}
+
+.doormat-menu{
+  border-top-right-radius: 3px;
+  width: 20%;
+  background-color: whitesmoke;
+}
+
+.doormat-menu > a{
+  font-size: 13px;
+  color: darkcyan;
+  padding: 3px;
+}
+
+.doormat-menu-list {
+  background-color: white;
+  height: 75px;
+  border-right: 2px solid whitesmoke;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+
 a, .dropdown-toggle {
   color:  darkcyan !important;
   font-weight: bold;
   font-size: 14px;
 }
 
+.menu-item {
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  margin-bottom: 2px;
+  color: darkslategray !important;
+}
+
+.menu-item:hover {
+  color: indianred !important;
+
+}
+
+.btn-myshop {
+  width: 170px;
+  padding: 4px !important;
+}
