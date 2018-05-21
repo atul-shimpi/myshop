@@ -8,13 +8,14 @@ body {
 
 .global-nav-containter {
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 
 }
 
 .nav-myshop {
   background-color: white;
   padding: 0 !important;
+  border-radius: 6px;
 }
 .shop-title {
   color: darksalmon;
@@ -54,6 +55,8 @@ body {
 
 .search-overlay {
 	 background-color: rgba(0, 0, 0, 0.6);
+	 box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
 	
 }
 
