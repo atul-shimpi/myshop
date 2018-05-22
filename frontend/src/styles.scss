@@ -3,7 +3,7 @@
 
 body {
   overflow: hidden;
-  background-color: whitesmoke;
+  background-color: RGB(250,250,250);
 }
 
 .global-nav-containter {
@@ -18,7 +18,7 @@ body {
   border-radius: 6px;
 }
 .shop-title {
-  color: darksalmon;
+  color: coral;
   font-size: 22px;
   font-weight: bold;
   padding-left: 10px;
@@ -98,44 +98,56 @@ body {
 .doormat-menu{
   border-top-right-radius: 3px;
   width: 20%;
-  background-color: whitesmoke;
+  background-color: RGB(245, 245, 245);
 }
 
 .doormat-menu > a{
   font-size: 13px;
-  color: darkcyan;
+  color: #aa66cc;
   padding: 3px;
 }
 
 .doormat-menu-list {
   background-color: white;
   height: 75px;
-  border-right: 2px solid whitesmoke;
+  border-right: 2px solid RGB(245, 245, 245);
   padding-left: 5px;
   padding-top: 5px;
 }
 
 
 a, .dropdown-toggle {
-  color:  darkcyan !important;
+  color:  #aa66cc !important;
   font-weight: bold;
   font-size: 14px;
+}
+
+.myshop-menu {
+	color: RGB(128, 128, 128) !important;
 }
 
 .menu-item {
   display: block;
   font-size: 13px;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 2px;
-  color: darkslategray !important;
+  color: #aa66cc !important;
+  padding-left: 2px;
 }
 
-.menu-item:hover {
-  color: indianred !important;
+.menu-item:not(.active):hover {
+  color: coral !important;
 
 }
 
 .btn-myshop {
   width: 170px;
   padding: 4px !important;
+  font-weight: bold;
+}
+
+.active {
+	color: black !important;
+	background-color: rgb(222,207,233);
+	border-radius: 3px;
 }
