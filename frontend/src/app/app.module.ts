@@ -1,28 +1,33 @@
+//angular core imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-// app imports
+//own imports
+import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from './products/products.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { TestComponent } from './test/test.component';
-import { AppRoutingModule } from './app-routing.module';
+
+// external imports
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-	TestComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+	MDBBootstrapModule.forRoot(),	
 	ProductsModule,
-	AppRoutingModule,
-   MDBBootstrapModule.forRoot()
+	CoreModule,
+	AppRoutingModule
+  ],
+  exports: [	
   ],
   providers: [],
   bootstrap: [AppComponent],
-schemas: [ NO_ERRORS_SCHEMA ]
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

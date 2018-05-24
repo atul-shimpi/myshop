@@ -1,0 +1,64 @@
+.global-nav-containter {
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.nav-myshop {
+  background-color: white;
+  padding: 0 !important;
+  border-radius: 6px;
+}
+
+
+.doormat-menu-bar {
+  width: 100%;
+}
+
+.doormat-menu{
+  border-top-right-radius: 3px;
+  width: 20%;
+  background-color: #DFF0D8;
+}
+
+.doormat-menu > a{
+  font-size: 13px;
+  color: #aa66cc;
+  padding: 3px;
+}
+
+.doormat-menu-list {
+  background-color: white;
+  height: 75px;
+  border-right: 2px solid #DFF0D8;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.btn-myshop {
+  width: 170px;
+  padding: 4px !important;
+  font-weight: bold;
+}
+
+.myshop-menu {
+	color: RGB(128, 128, 128) !important;
+}
+
+.menu-item {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: #aa66cc !important;
+  padding-left: 2px;
+}
+
+.menu-item:not(.active):hover {
+  color: coral !important;
+}
+.active {
+	color: black !important;
+	background-color: rgb(222,207,233);
+	border-radius: 3px;
+}
+
