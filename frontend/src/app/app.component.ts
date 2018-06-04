@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, Event, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	onClickMenuItem() {
-		alert('hello');
+	isHome: boolean = true;
+	
+	constructor(
+		private router: Router,
+		private activatedRoute: ActivatedRoute
+	) {
+		router.events.subscribe( (event: Event) => {
+			if (event instanceof NavigationEnd) {
+				//this.isHome = router.url == '/'; 
+      }
+		});
 	}
 }

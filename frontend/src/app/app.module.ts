@@ -19,10 +19,10 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
-	MDBBootstrapModule.forRoot(),	
-	ProductsModule,
-	CoreModule,
-	AppRoutingModule
+		MDBBootstrapModule.forRoot(),	
+		ProductsModule,
+		CoreModule,
+		AppRoutingModule
   ],
   exports: [	
   ],

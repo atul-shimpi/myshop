@@ -3,11 +3,11 @@ import {Routes, RouterModule} from '@angular/router';
 
 // app imports
 import { HomeComponent } from './home/home.component';
-import { ManageProductsComponent } from './products/manage-products.component';
+import { ManageProductsPageComponent } from './products/manage-products-page.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-	{ path: 'products', component: ManageProductsComponent }
+  { path: '', component: HomeComponent },
+	{ path: 'products', component: ManageProductsPageComponent }
 ];
 
 @NgModule({

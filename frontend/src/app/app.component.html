@@ -1,3 +1,6 @@
 <shop-app-header></shop-app-header>
 <shop-app-menu></shop-app-menu>
-<router-outlet></router-outlet>
+
+<div class="task-container" [ngClass]="{'with-padding': !isHome}">
+	<router-outlet></router-outlet>
+<div>

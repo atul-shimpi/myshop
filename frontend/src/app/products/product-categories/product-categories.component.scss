@@ -1,0 +1,22 @@
+.categories-container {
+	webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	width: 49.5%;
+	height: 100%;
+	float: left;
+}
+
+.categories-title {
+	height: 5%;
+	padding-left: 5px;
+	background-color: rgb(222,207,233);
+}
+
+.categories-toolbar {
+	height: 9%;
+	background-color: RGB(240, 240, 240);	
+}
+
+.categories-list {
+	height: 85%;
+}
