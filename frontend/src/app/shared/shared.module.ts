@@ -1,21 +1,31 @@
 // angular modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule }   from '@angular/forms';
+
 // vendor modules
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 //my shop components
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+
+// my shop directives
+import { AutofocusDirective } from './directives/autofocus.directive';
 
 @NgModule({
   imports: [
     CommonModule,
-		MDBBootstrapModule.forRoot()
+    FormsModule,
+	MDBBootstrapModule.forRoot()
   ],
   declarations: [
-		PageHeaderComponent
+		PageHeaderComponent,
+		AutofocusDirective
 	],
 	exports: [
+		FormsModule,
 		PageHeaderComponent,
+		AutofocusDirective,
 		MDBBootstrapModule
 	]
 })

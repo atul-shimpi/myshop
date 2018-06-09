@@ -1,3 +1,5 @@
+@import '~angular-tree-component/dist/angular-tree-component.css';
+
 body {
   overflow: hidden;
   background-color: RGB(245,245,245);
@@ -15,4 +17,30 @@ a, .dropdown-toggle {
   color:  #aa66cc !important;
   font-weight: bold;
   font-size: 14px;
+}
+
+.node-content-wrapper {
+	padding: 0 !important;
+	width: 100% !important;
+}
+
+.toggle-children {
+	color: red !important;
+}
+
+.modal-header {
+  background: #773399 !important; 
+}
+
+.modal-title {
+  color: white !important;
+}
+
+.btn-app {
+  width: 100px !important;
+}
+
+.my-shop-label {
+  font-weight: bold;
+  color: RGB(100,100,100);
 }

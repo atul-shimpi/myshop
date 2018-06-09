@@ -1,6 +1,7 @@
 //angular core imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 //own imports
@@ -19,6 +20,7 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
 		MDBBootstrapModule.forRoot(),	
 		ProductsModule,
 		CoreModule,

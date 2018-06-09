@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1000,
+        "name": "Asian Paints",
+        "subCategories": [
+            {
+                "id": 1001,
+                "name": "Exterior",
+                "products": [
+                    {
+                        "id": 10012,
+                        "name": "Exterior 10012"
+                    },
+                    {
+                        "id": 10013,
+                        "name": "Exterior 10013"
+                    },
+                    {
+                        "id": 10014,
+                        "name": "Exterior 10014"
+                    }
+                ]
+            },
+            {
+                "id": 1002,
+                "name": "Interior",
+                "subCategories": [
+                    {
+                        "id": 400,
+                        "name": "Exterior 10012"
+                    }
+                ]
+            },
+            {
+                "id": "otw77lx8ji7g09h3",
+                "name": "Garden Color",
+                "subCategories": [
+                    {
+                        "id": "otw77lrcji7g146p",
+                        "name": "Garden Color - Front"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2000,
+        "name": "Nerolac",
+        "subCategories": [
+            {
+                "id": 2001,
+                "name": "Exterior",
+                "products": [
+                    {
+                        "id": 20012,
+                        "name": "Exterior 10012"
+                    },
+                    {
+                        "id": 20013,
+                        "name": "Exterior 10013"
+                    },
+                    {
+                        "id": 20014,
+                        "name": "Exterior 10014"
+                    }
+                ]
+            },
+            {
+                "id": 2002,
+                "name": "Interior"
+            }
+        ]
+    },
+    {
+        "id": "otw77m5sji7g7mtw",
+        "name": "Garden Color - Front"
+    }
+]
