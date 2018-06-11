@@ -23,10 +23,14 @@
 				{{ node.data.name }}
 			</span>   
 	
-			<button class="btn btn-sm btn-outline-secondary category-action pull-right" (click)="addEditCategoryModal.show()">
+			<button
+				class="btn btn-sm btn-outline-secondary category-action pull-right"
+				(click)="deleteCategory(node.id)">
 		    <i class="fa fa-trash"></i>
 		  </button>
-			<button class="btn btn-sm btn-outline-secondary category-action pull-right" (click)="addEditCategoryModal.show()">
+			<button
+			 class="btn btn-sm btn-outline-secondary category-action pull-right"
+			 (click)="onClickAddEditCategoryBtn(node.data); addEditCategoryModal.show()">
 		    <i class="fa fa-pencil"></i>
 		  </button>
 			 <button 

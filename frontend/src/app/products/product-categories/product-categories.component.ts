@@ -1,5 +1,6 @@
 // angular services 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import * as _ from 'lodash';
 
 
 //third party
@@ -22,8 +23,10 @@ export class ProductCategoriesComponent {
   options = { childrenField: 'subCategories' };
 
   // private properties
-  productsAndCategories = [];  
+  productsAndCategories: any;  
   isAddingSubCategory = false;
+  isEditingCategory = false;
+  categoryId: string = null;
   categoryName: string = null;
   parentCategoryId: string;
   modalTitle: string = 'Add Category';
@@ -36,46 +39,130 @@ export class ProductCategoriesComponent {
     .subscribe(
       data => {
         this.productsAndCategories = data;
+
+        const obj =  this.findById(this.productsAndCategories,'1002');
+        console.log('Found : ' + JSON.stringify(obj));
       }
     );
   }
 
   onModalOpened() {
-    //alert('hi');
-    this.ctgInputBox.nativeElement.focus();
-    console.log('oPEND');
+    this.ctgInputBox.nativeElement.focus();    
   }
 
   onClickAddCategoryBtn() {
+    this.categoryName = null
     this.modalTitle = 'Add Category';
     this.fieldTitle = 'Category Name';
     this.isAddingSubCategory = false;
   }
 
   onClickAddSubCategoryBtn(category) {
+    this.categoryName = null
     this.modalTitle = 'Add Sub Category';
     this.fieldTitle = 'Sub Category Name';
     this.parentCategoryId = category.id;
     this.isAddingSubCategory = true;
   }
+
+  onClickAddEditCategoryBtn(category) {
+    this.categoryName = category.name;
+    this.modalTitle = 'Edit Category';
+    this.fieldTitle = 'Category Name';
+    this.categoryId = category.id;
+    this.isEditingCategory = true;
+  }
 	
   onClickSaveCategoryBtn() {
-    const category = { };
+    if ( this.isEditingCategory ) {
+      this.updateCategory();
+    } else {
+      this.saveCategory();
+    }
+  }
+
+  saveCategory() {
+    const category: any = { };
 
     category.name = this.categoryName;
 
     if ( this.isAddingSubCategory ) {
-      category.parentCategoryId = this.parentCategoryId;  
-      alert(JSON.stringify(category)); 
+      category.parentCategoryId = this.parentCategoryId;
     }
 
     this.categoriesAndProductsService.save(category)
-      .subscribe(category => { 
-        this.productsAndCategories.push(category);
+      .subscribe(categorySaved => { 
+        if ( this.isAddingSubCategory ) {
+          const parentCtg = this.findById(this.productsAndCategories, category.parentCategoryId);
+          
+          parentCtg.subCategories = parentCtg.subCategories || [];
+          parentCtg.subCategories.push(category);
+        } else {
+          this.productsAndCategories.push(category);
+        }
+        this.tree.treeModel.update();
+
+        this.isAddingSubCategory = false;
+      }
+    )    
+  }
+
+  updateCategory() {
+    const category: any = { };
+
+    category.id = this.categoryId;
+    category.name = this.categoryName;
+
+    this.categoriesAndProductsService.update(category)
+      .subscribe(categorySaved => {         
+        const parentCtg = this.findById(this.productsAndCategories, category.parentCategoryId);
+        
+        parentCtg.name = category.name;
+        this.tree.treeModel.getNodeById(category.id).data.name = category.name;
+
+        this.isEditingCategory = false;
+      }
+    )   
+
+  }
+
+
+  deleteCategory(categoryId) {
+    this.categoriesAndProductsService.delete(categoryId)
+      .subscribe(categoryDeleted => {   
+        alert(JSON.stringify(categoryDeleted));  
+
+        if ( categoryDeleted.path.length == 0 ) {
+          this.productsAndCategories.splice(categoryDeleted.index, 1);
+        } else {
+          const obj = this.productsAndCategories;
+
+          categoryDeleted.path.forEach( val => {
+            obj = obj[val];
+          });
+
+          console.log('Obj ' + JSON.stringify(obj));
+          obj.splice(categoryDeleted.index, 1);
+        }
         this.tree.treeModel.update();
       }
-    )
-    
-    this.isAddingSubCategory = false;
+    )  
   }
+
+  findById(obj, id) {
+    var result;
+    for (var p in obj) {
+        if (obj.id === id) {
+            return obj;
+        } else {
+            if (typeof obj[p] === 'object') {
+                result = this.findById(obj[p], id);
+                if (result) {
+                    return result;
+                }
+            }
+        }
+    }
+    return result;
+}
 }

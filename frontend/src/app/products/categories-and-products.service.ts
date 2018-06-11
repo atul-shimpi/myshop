@@ -17,4 +17,13 @@ export class CategoriesAndProductsService {
   save(category) {
   	return this.http.post('http://localhost:3000/products', category);
   }
+
+  update(category) {
+  	return this.http.put(`http://localhost:3000/products/${category.id}`, category);
+  }
+
+  delete(categoryId) {
+    return this.http.delete(`http://localhost:3000/products/${categoryId}`);
+  }
+
 }

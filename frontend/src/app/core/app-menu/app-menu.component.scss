@@ -15,21 +15,21 @@
 }
 
 .doormat-menu{
-  border-top-right-radius: 3px;
+  xborder-top-right-radius: 3px;
   width: 20%;
-  background-color: #DFF0D8;
+  background-color: #aa66cc;
 }
 
 .doormat-menu > a{
-  font-size: 13px;
-  color: #aa66cc;
+  font-size: 14px;
+  color: white !important;
   padding: 3px;
 }
 
 .doormat-menu-list {
   background-color: white;
   height: 75px;
-  border-right: 2px solid #DFF0D8;
+  border-right: 1px solid #aa66cc;
   padding-left: 5px;
   padding-top: 5px;
 }
@@ -57,8 +57,8 @@
   color: coral !important;
 }
 .active {
-	color: black !important;
-	background-color: rgb(222,207,233);
+	color: coral !important;
+	xbackground-color: rgb(222,207,233);
 	border-radius: 3px;
 }
 
