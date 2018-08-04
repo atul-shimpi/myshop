@@ -1,0 +1,44 @@
+[
+    {
+        "id": "2000",
+        "name": "Nerolac",
+        "subCategories": []
+    },
+    {
+        "id": "otw77m5sji7g7mtw",
+        "name": "Garden Color - Front",
+        "subCategories": [
+            {
+            "id": "otw77m38jiauqif6",
+            "name": "China",                  
+                "products": [                  
+                  {
+                    "group": {
+                      "id": 1001,
+                      "name": "General Products"    
+                    },
+                    "items": [
+                      { 
+                        "id": 10011,
+                        "name": "Nerocal Emulsion 10 ltr", 
+                        "metadata": { "cellIndex": 0 } 
+                      },{ 
+                        "id": 10011,
+                        "name": "Nerolac Emulsion 15 ltr", 
+                        "metadata": { "cellIndex": 1 } 
+                      }, { 
+                        "id": 10011,
+                        "name": "Nerolac Emulsion 20 ltr", 
+                        "metadata": { "cellIndex": 2 } 
+                      }               
+                  ]
+                }
+                ]                                    
+            }
+        ]
+    },
+    {
+        "id": "23j6h8jkf8gtws",
+        "name": "himu"
+    }
+]

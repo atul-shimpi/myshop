@@ -22,7 +22,7 @@ export class CategoriesAndProductsService {
   	return this.http.put(`http://localhost:3000/products/${category.id}`, category);
   }
 
-  delete(categoryId) {
+  delete(categoryId): Observable<any> {
     return this.http.delete(`http://localhost:3000/products/${categoryId}`);
   }
 

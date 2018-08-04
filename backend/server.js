@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 //routes definitons
-const products = require('./products/routes');
+const categories = require('./product-categories/routes');
 //==================================================================================
 
 // enable cors
@@ -18,13 +18,11 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json()); 
 
 //routes mapping
-app.use('/products', products);
-
+app.use('/categories', categories);
 
 app.get('/', function (req, res) {
    res.send('Welcome to myShop Backend');
 })
-
 
 // start the server
 var server = app.listen(3000, function () {

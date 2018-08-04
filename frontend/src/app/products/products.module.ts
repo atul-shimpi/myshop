@@ -11,22 +11,16 @@ import { ProductCategoriesComponent } from './product-categories/product-categor
 import { ProductsComponent } from './products/products.component';
 import { ManageProductsPageComponent } from './manage-products-page.component';
 
-// services
-import { CategoriesAndProductsService } from './categories-and-products.service';
-
-@NgModule({
-	providers: [
-		CategoriesAndProductsService
-	], 		
+@NgModule({		
   imports: [
     CommonModule,
 	TreeModule,
 	SharedModule
   ],
   declarations: [
-		ManageProductsPageComponent,
-		ProductCategoriesComponent,
-		ProductsComponent
+	ManageProductsPageComponent,
+	ProductCategoriesComponent,
+	ProductsComponent
 	]
 })
 export class ProductsModule { }

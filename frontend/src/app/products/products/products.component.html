@@ -1,10 +1,71 @@
 <div class="products-container">
 	<div class="products-title"><strong>Products</strong></div>
 	<div class="products-toolbar">
-		<button class="btn btn-sm btn-secondary waves-effect waves-light" (click)="basicModal.show()">
+		<button class="btn btn-sm btn-secondary waves-effect waves-light" (click)="addEditProductsModal.show()">
     <i class="fa fa-plus left"></i>
      Add
   </button>
 	</div>
 	<div class="products-list"></div>
 </div>
+
+<!-- Add/Edit product Modal : Start-->
+<div 
+	mdbModal 
+	#addEditProductsModal="mdb-modal" 
+	class="modal fade"
+	tabindex="-1"
+	role="dialog"
+	aria-labelledby="myaddEditCategoryModalLabel"
+	aria-hidden="true"
+	(onShown)="onModalOpened($event)"
+	[config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+						<button type="button" class="close pull-right" aria-label="Close" (click)="addEditProductsModal.hide()">
+								<span aria-hidden="true">×</span>
+						</button>
+						<h6 class="modal-title w-100" id="myModalLabel">{{ modalTitle }}</h6>
+				</div>
+				<div class="modal-body">
+						<div class="md-formx">
+		<form  novalidate>	
+			
+		<label for="categoryName" class="my-shop-label">Description</label>	
+		<!-- Description input box -->	
+    <input
+    	#ctgInputBox
+     	type="text"
+     	id="categoryName"
+     	name="categoryName"
+     	class="form-control"
+     	autocomplete="off"			
+		>
+		
+		<br>
+		<!-- Products input boxes-->
+		<div>
+			<input *ngFor="let idx of cells" class="form-control product-cell">			
+		</div>
+  </form>
+</div>
+	</div>
+	<div class="modal-footer">
+		<button 
+			type="button"
+				class="btn btn-sm btn-outline-secondary waves-effect waves-light btn-app"
+				aria-label="Close" (click)="addEditProductsModal.hide()" mdbRippleRadius>Cancel</button>
+			<button 
+				type="button" 
+				class="btn btn-sm btn-secondary waves-effect waves-light btn-app"
+				mdbRippleRadius
+				(click)="onClickSaveCategoryBtn(categoryName.value);addEditProductsModal.hide();"
+			>
+			Save 
+		</button>
+	</div>
+</div>
+    </div>
+</div>
+<!-- Add/Edit product Modal : End -->

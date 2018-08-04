@@ -1,13 +1,10 @@
 // angular services 
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as _ from 'lodash';
-
-
+// app services
+import { CategoriesAndProductsService } from '../../core/services/categories-and-products.service';
 //third party
 import { TreeComponent, TreeModel, TreeNode } from 'angular-tree-component';
-
-// app services
-import { CategoriesAndProductsService } from '../categories-and-products.service';
 
 @Component({
   selector: 'myshop-product-categories',
@@ -135,7 +132,7 @@ export class ProductCategoriesComponent {
         if ( categoryDeleted.path.length == 0 ) {
           this.productsAndCategories.splice(categoryDeleted.index, 1);
         } else {
-          const obj = this.productsAndCategories;
+          let obj = this.productsAndCategories;
 
           categoryDeleted.path.forEach( val => {
             obj = obj[val];

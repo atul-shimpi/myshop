@@ -1,28 +1,26 @@
 'use strict';
-const express = require('express');
-const router = express.Router();
 const fs = require('fs');
 const uniqid = require('uniqid');
 const _ = require('lodash');
 _.mixin(require("lodash-deep"));
 //==========================================================
-
 let productsAndCategories = {};
 let deletePath = null;
 
-fs.readFile('./products/products.json', (err, data) => {  
-    if (err) throw err;
-    productsAndCategories = JSON.parse(data);
+class CategoriesAndProductsService {
+  constructor() {
+    this.productsAndCategories = { };
+    
+    fs.readFile('./product-categories/products.json', (err, data) => {  
+      if (err) throw err;
+      this.productsAndCategories = JSON.parse(data);
+    });  
+  }
 
-    const categoryToAdd = { };
- 	var parentCtg;
- 	categoryToAdd.id = uniqid();
- 	categoryToAdd.name = 'req.body.name';
-
-
-
- 	//addSubCategory(productsAndCategories, 400, categoryToAdd);
-});
+  getCategories(callback) {
+    callback(undefined, this.productsAndCategories);
+  }
+}
 
 function addSubCategory(categories, parentCtgId, categoryToAdd) {
 	let sourceCategory = getSubCategory(categories, parentCtgId);
@@ -95,48 +93,6 @@ function deleteCategoryByID(categories, parentCtgId) {
 	return deletePath;
 }
 
-router.get('/', 
-	(req, res) => res.send(productsAndCategories)
-)
-
-router.delete('/:id', (req, res) => {
- 	const deletedPath = deleteCategoryByID(productsAndCategories, req.params.id);
- 	saveFile();
- 	res.send(deletedPath);
- });
-
-router.put('/:id', (req, res) => {
-	console.log('Updatingxxx ' + req.body.name);
- 	console.log('Id ' + req.params.id);
-
- 	const categoryToUpdate = findById(productsAndCategories, req.params.id);
- 	categoryToUpdate.name =  req.body.name;
- 	saveFile();
- 	
- 	res.send(categoryToUpdate);
- });
-
-router.post('/',  (req, res) => {
- 	console.log('Creating name : ' + req.body.name);
- 	const categoryToAdd = { };
- 	var parentCtg;
- 	categoryToAdd.id = uniqid();
- 	categoryToAdd.name = req.body.name;
-
- 	if ( req.body.parentCategoryId ) {
- 		addSubCategory(productsAndCategories, req.body.parentCategoryId, categoryToAdd);
- 	} else {
- 		productsAndCategories.push(categoryToAdd);
- 	}
- 	
- 	//console.log(categoryToAdd);
- 	saveFile();
- 	
- 	res.send(categoryToAdd);
- }
-);
-
-
 function saveFile() {
 	fs.writeFileSync('./products/products.json', JSON.stringify(productsAndCategories,null,4));
 }
@@ -158,6 +114,16 @@ function findById(obj, id) {
     return result;
 }
 
+const addDeleteUpdateProducts = (categoryId, products) => {
+	console.log('Managing Products : ' + products);
+
+	products.forEach( (product) => {
+		console.log('Current Product : ' + product);
+	});
+
+	
+}
+
 const removeEmpty = (obj) => {
 	return;
   let newObj = {};
@@ -170,4 +136,5 @@ const removeEmpty = (obj) => {
   return newObj;
 };
 
-module.exports = router;
+
+module.exports = new CategoriesAndProductsService();
