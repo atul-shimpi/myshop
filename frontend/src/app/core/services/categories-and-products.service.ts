@@ -11,19 +11,19 @@ export class CategoriesAndProductsService {
   constructor(private http:HttpClient) {}
  
   getAll() {
-    return this.http.get('http://localhost:3000/products');
+    return this.http.get('http://localhost:3000/categories');
   }
 
   save(category) {
-  	return this.http.post('http://localhost:3000/products', category);
+  	return this.http.post('http://localhost:3000/categories', category);
   }
 
   update(category) {
-  	return this.http.put(`http://localhost:3000/products/${category.id}`, category);
+  	return this.http.put(`http://localhost:3000/categories/${category.id}`, category);
   }
 
   delete(categoryId): Observable<any> {
-    return this.http.delete(`http://localhost:3000/products/${categoryId}`);
+    return this.http.delete(`http://localhost:3000/categories/${categoryId}`);
   }
 
 }
